@@ -152,6 +152,9 @@ export function Footer() {
             © {new Date().getFullYear()} CVAERJ — Circuito de Vôlei Amador do
             Estado do Rio de Janeiro. Todos os direitos reservados.
           </p>
+          <p className="text-xs text-cream-100/40">
+            Presidente Executivo: João Ribeiro
+          </p>
           <p className="text-xs uppercase tracking-widest text-cream-100/40">
             Feito com paixão pelo vôlei
           </p>

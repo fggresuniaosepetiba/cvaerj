@@ -5,7 +5,7 @@ import { ButtonLink } from "@/components/ui/Button";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-navy-950 pt-28 pb-16">
+    <section className="relative flex min-h-[92vh] items-center overflow-hidden bg-navy-950 pt-8 pb-16">
       <div
         aria-hidden
         className="absolute inset-0"

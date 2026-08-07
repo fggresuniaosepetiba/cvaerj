@@ -9,16 +9,8 @@ import { cn } from "@/lib/utils";
 import { Logo } from "@/components/ui/Logo";
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     setOpen(false);
@@ -35,14 +27,7 @@ export function Navbar() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled || open
-          ? "border-b border-white/10 bg-navy-950/95 shadow-lg shadow-navy-950/40 backdrop-blur-md"
-          : "bg-gradient-to-b from-navy-950/80 to-transparent",
-      )}
-    >
+    <header className="relative z-50 bg-navy-950/95 backdrop-blur-md">
       <div className="mx-auto flex h-20 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="Início — CVAERJ">
           <Logo className="h-12 w-12 sm:h-14 sm:w-14" />
