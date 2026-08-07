@@ -2,9 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Archivo, Inter } from "next/font/google";
 import "./globals.css";
 
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
-import { BackToTop } from "@/components/ui/BackToTop";
+import { SiteChrome } from "@/components/layout/SiteChrome";
 import { siteConfig } from "@/data/site";
 
 const archivo = Archivo({
@@ -78,10 +76,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${archivo.variable} ${inter.variable}`}>
       <body className="flex min-h-screen flex-col">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <BackToTop />
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

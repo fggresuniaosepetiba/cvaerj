@@ -26,7 +26,11 @@ const prizes = [
   { place: "3º lugar", label: "Medalhas", icon: Medal },
 ];
 
-export function TeamRegistrationForm() {
+export function TeamRegistrationForm({
+  orgName = "CVAERJ",
+}: {
+  orgName?: string;
+}) {
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 
@@ -47,8 +51,8 @@ export function TeamRegistrationForm() {
           Inscrição recebida
         </h3>
         <p className="mt-2 max-w-sm text-sm leading-relaxed text-navy-900/65">
-          Recebemos a inscrição da sua equipe. A organização do CVAERJ entrará
-          em contato pelo WhatsApp para confirmar a participação.
+          Recebemos a inscrição da sua equipe. A organização do {orgName}{" "}
+          entrará em contato pelo WhatsApp para confirmar a participação.
         </p>
       </div>
     );

@@ -8,6 +8,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/sobre",
     "/etapas",
     "/equipes",
+    "/inscricao",
+    "/copa-cesarao",
     "/ranking",
     "/ranking-geral",
     "/regulamento",
