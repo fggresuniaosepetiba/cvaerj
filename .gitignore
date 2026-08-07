@@ -7,6 +7,9 @@
 # testing
 /coverage
 
+# playwright mcp diagnostics
+/.playwright-mcp/
+
 # next.js
 /.next/
 /out/
