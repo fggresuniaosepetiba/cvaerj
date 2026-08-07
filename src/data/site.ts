@@ -1,7 +1,7 @@
 export const siteConfig = {
   shortName: "CVAERJ",
   name: "Circuito de Vôlei Amador do Estado do Rio de Janeiro",
-  slogan: "O maior palco do vôlei amador do Estado do Rio de Janeiro.",
+  slogan: "Um novo palco para o vôlei amador do Estado do Rio de Janeiro.",
   vision: "Ser a maior competição de vôlei amador do Estado do Rio de Janeiro.",
   description:
     "O site oficial do Circuito de Vôlei Amador do Estado do Rio de Janeiro (CVAERJ) — o maior palco do vôlei amador do Estado do Rio de Janeiro, com etapas, equipes, rankings e notícias de todo o estado.",

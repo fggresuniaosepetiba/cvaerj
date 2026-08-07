@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Clock } from "lucide-react";
+import { ArrowRight, Clock } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -56,10 +56,6 @@ export function News() {
                   <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-navy-900/65">
                     {item.excerpt}
                   </p>
-                  <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-xs font-bold uppercase tracking-wider text-gold-600 opacity-0 transition-all duration-300 group-hover:opacity-100">
-                    Ler notícia
-                    <ArrowUpRight className="h-3.5 w-3.5" />
-                  </span>
                 </div>
               </article>
             </Reveal>

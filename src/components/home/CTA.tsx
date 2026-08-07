@@ -23,7 +23,7 @@ export function CTA() {
               <Trophy className="h-6 w-6" />
             </span>
             <h2 className="mt-6 text-balance font-display text-3xl font-black uppercase leading-tight text-white sm:text-4xl lg:text-5xl">
-              Sua equipe no maior palco do vôlei amador do Estado do Rio de Janeiro
+              Sua equipe no novo palco do vôlei amador do Estado do Rio de Janeiro
             </h2>
             <p className="mt-5 text-base leading-relaxed text-cream-100/75 sm:text-lg">
               Garanta a vaga da sua equipe na primeira temporada do CVAERJ e

@@ -8,11 +8,11 @@ import { Logo } from "@/components/ui/Logo";
 const pillars = [
   {
     title: "Competitividade",
-    text: "Formato profissional, arbitragem oficial e disputa equilibrada em todas as categorias.",
+    text: "Formato profissional, arbitragem qualificada e disputa equilibrada.",
   },
   {
     title: "Organização",
-    text: "Etapas planejadas, comunicação clara e infraestrutura completa em cada cidade-sede.",
+    text: "Temporada planejada, comunicação clara e infraestrutura completa na cidade-sede.",
   },
   {
     title: "Comunidade",
@@ -52,10 +52,10 @@ export function About() {
               equipes de todo o Estado do Rio de Janeiro.
             </p>
             <p className="mt-4 text-base leading-relaxed text-navy-900/70">
-              Etapa após etapa, o circuito vai reunir as melhores equipes
-              amadoras do estado em um calendário que cruza a capital, a Região
-              Serrana, os Lagos e o interior, construindo uma nova tradição
-              esportiva.
+              A partir do evento de estreia, o circuito vai reunir equipes
+              amadoras de todo o estado em uma competição organizada e
+              disputada, construindo uma nova tradição esportiva no Rio de
+              Janeiro.
             </p>
 
             <ul className="mt-8 space-y-5">

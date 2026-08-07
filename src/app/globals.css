@@ -24,7 +24,7 @@
   --font-sans: var(--font-inter);
 
   /* ===== Animações ===== */
-  --animate-marquee: marquee 36s linear infinite;
+  --animate-marquee: marquee 16s linear infinite;
   --animate-marquee-slow: marquee 52s linear infinite;
 
   @keyframes marquee {
@@ -32,7 +32,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(-50%);
+      transform: translateX(-100%);
     }
   }
 }

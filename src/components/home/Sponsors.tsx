@@ -7,8 +7,8 @@ export function Sponsors() {
     <section className="relative overflow-hidden border-y border-white/10 bg-navy-900 py-16 sm:py-20">
       <Container>
         <SectionHeading
-          eyebrow="Patrocinadores"
-          title="Marcas que vão apoiar o vôlei amador do Estado do Rio de Janeiro"
+          eyebrow="Patrocinadores & Apoiadores"
+          title="Marcas e organizações que vão apoiar o vôlei amador do Estado do Rio de Janeiro"
           align="center"
           dark
         />
