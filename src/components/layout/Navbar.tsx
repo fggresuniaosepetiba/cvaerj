@@ -41,7 +41,7 @@ export function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Navegação principal">
+        <nav className="hidden items-center gap-1 xl:flex" aria-label="Navegação principal">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -60,7 +60,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link
-            href="/contato"
+            href="/inscricao"
             className="ml-3 inline-flex items-center gap-2 rounded-md bg-gold-500 px-4 py-2.5 font-display text-sm font-bold uppercase tracking-wider text-navy-950 transition-colors hover:bg-gold-400"
           >
             Inscreva sua equipe
@@ -71,7 +71,7 @@ export function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex items-center justify-center rounded-md p-2 text-white transition-colors hover:bg-white/10 lg:hidden"
+          className="inline-flex items-center justify-center rounded-md p-2 text-white transition-colors hover:bg-white/10 xl:hidden"
           aria-label={open ? "Fechar menu" : "Abrir menu"}
           aria-expanded={open}
         >
@@ -80,7 +80,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="border-t border-white/10 bg-navy-950/98 lg:hidden">
+        <div className="border-t border-white/10 bg-navy-950/98 xl:hidden">
           <nav
             className="flex max-h-[calc(100vh-5rem)] flex-col gap-1 overflow-y-auto px-4 py-6"
             aria-label="Navegação móvel"
@@ -100,7 +100,7 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              href="/contato"
+              href="/inscricao"
               className="mt-4 inline-flex items-center justify-center gap-2 rounded-md bg-gold-500 px-4 py-3.5 font-display text-sm font-bold uppercase tracking-wider text-navy-950"
             >
               Inscreva sua equipe

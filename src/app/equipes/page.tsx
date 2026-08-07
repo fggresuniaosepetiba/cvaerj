@@ -102,7 +102,7 @@ export default function EquipesPage() {
           <p className="mt-12 text-center text-sm text-navy-900/55">
             Quer levar sua equipe para a primeira temporada?{" "}
             <a
-              href="/contato"
+              href="/inscricao"
               className="font-semibold text-gold-600 underline-offset-4 hover:underline"
             >
               Faça a inscrição e entre no circuito

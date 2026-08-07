@@ -31,7 +31,7 @@ export function CTA() {
               Janeiro.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
-              <ButtonLink href="/contato" size="lg">
+              <ButtonLink href="/inscricao" size="lg">
                 Inscreva sua equipe
                 <ArrowRight className="h-5 w-5" />
               </ButtonLink>

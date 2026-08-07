@@ -79,7 +79,7 @@ export function NextStage() {
                 </div>
 
                 <div className="mt-10">
-                  <ButtonLink href="/contato">
+                  <ButtonLink href="/inscricao">
                     Inscreva sua equipe
                     <ArrowRight className="h-4 w-4" />
                   </ButtonLink>
