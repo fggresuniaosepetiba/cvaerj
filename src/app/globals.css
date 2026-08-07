@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  /* ===== Paleta oficial CVAERJ (extraída da logo) ===== */
+  --color-navy-950: #010a1e;
+  --color-navy-900: #011130;
+  --color-navy-800: #062047;
+  --color-navy-700: #0a2c5e;
+  --color-navy-600: #123b75;
+  --color-navy-500: #1c4c90;
+
+  --color-gold-300: #f7cf8b;
+  --color-gold-400: #f6be63;
+  --color-gold-500: #e2a93f;
+  --color-gold-600: #c89949;
+  --color-gold-700: #a67c2e;
+
+  --color-cream-50: #faf8f4;
+  --color-cream-100: #ece7e2;
+  --color-cream-200: #ddd5cc;
+
+  /* ===== Tipografia ===== */
+  --font-display: var(--font-archivo);
+  --font-sans: var(--font-inter);
+
+  /* ===== Animações ===== */
+  --animate-marquee: marquee 36s linear infinite;
+  --animate-marquee-slow: marquee 52s linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-50 text-navy-900 font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-gold-400 text-navy-950;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #011130;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #f6be63;
+    border-radius: 9999px;
+    border: 1px solid #011130;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #e2a93f;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #f6be63 #011130;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .pause-on-hover:hover .animate-marquee,
+  .pause-on-hover:hover .animate-marquee-slow {
+    animation-play-state: paused;
+  }
+
+  /* Utilitário de máscara para carrossel de patrocinadores */
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+  }
+}
