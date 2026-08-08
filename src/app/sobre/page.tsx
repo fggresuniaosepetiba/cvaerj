@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Target, Eye, HeartHandshake, ShieldCheck, Scale, Users } from "lucide-react";
+import { Target, Eye, HeartHandshake, ShieldCheck, Scale, Users, UserRound } from "lucide-react";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
+import { DirectorPhoto } from "@/components/ui/DirectorPhoto";
 import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -37,26 +38,47 @@ const values = [
 
 const timeline = [
   {
-    year: "2021",
-    title: "O nascimento do projeto",
-    text: "Um grupo de apaixonados por vôlei se une com um objetivo claro: criar uma competição estadual organizada e itinerante para o vôlei amador do Rio de Janeiro.",
-  },
-  {
     year: "2024",
-    title: "Estruturação do circuito",
-    text: "Regulamento oficial, categorias e formato de disputa são definidos para garantir organização e competitividade desde a primeira etapa.",
+    title: "G.R.E.S. União de Sepetiba",
+    text: "João Ribeiro funda a G.R.E.S. União de Sepetiba, escola de samba da região.",
   },
   {
     year: "2025",
-    title: "Plataforma e parcerias",
-    text: "A plataforma oficial é construída e as primeiras cidades do estado manifestam interesse em receber o circuito.",
+    title: "Quinto Set Escolinha de Vôlei",
+    text: "Marlon Silva procura João Ribeiro e, juntos, idealizam a Quinto Set Escolinha de Vôlei.",
   },
   {
     year: "2026",
-    title: "A temporada de estreia",
-    text: "O CVAERJ abre as inscrições para a primeira temporada, com etapas planejadas para diferentes regiões do estado.",
+    title: "O nascimento do CVAERJ",
+    text: "Marlon Silva e João Ribeiro tiram a Quinto Set do papel e, juntos, fundam o CVAERJ para realizar competições de vôlei amador.",
   },
 ];
+
+const executiveBoard = [
+  {
+    name: "João Ribeiro",
+    role: "Presidente",
+    initials: "JR",
+    photo: "/sobre/joao-ribeiro.jpg",
+    bio: "Empreendedor, cientista de dados e dirigente, Ribeiro atua na construção de projetos esportivos, culturais e sociais voltados ao fortalecimento de sua comunidade.",
+    aspect: "aspect-[4/5]",
+  },
+  {
+    name: "Marlon Silva",
+    role: "Diretor Executivo Geral",
+    initials: "MS",
+    photo: "/sobre/marlon-silva.jpg",
+    bio: "Professor de Educação Física e atleta amador, Marlon é idealizador da Quinto Set e atua na construção esportiva do projeto.",
+    aspect: "aspect-[3/4]",
+  },
+];
+
+const boardMembers: {
+  name: string;
+  role: string;
+  initials: string;
+  photo?: string;
+}[] = [];
 
 export default function SobrePage() {
   return (
@@ -71,26 +93,43 @@ export default function SobrePage() {
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
             <Reveal>
-              <SectionHeading eyebrow="O Projeto" title="Nasceu da paixão, pronto para crescer com o estado" />
+              <SectionHeading
+                eyebrow="O Projeto"
+                title="Nasce da educação esportiva, pronto para crescer por todo o estado"
+              />
               <div className="mt-6 space-y-4 text-base leading-relaxed text-navy-900/75 sm:text-lg">
                 <p>
-                  O CVAERJ nasceu do encontro de atletas e entusiastas que
-                  perceberam uma lacuna no vôlei amador do Estado do Rio de Janeiro: faltava uma
-                  competição com nível de organização, estrutura e
-                  competitividade à altura da tradição esportiva do estado.
+                  O CVAERJ nasce da educação esportiva. A história começa com
+                  Marlon Silva — professor de Educação Física formado pela
+                  Universidade Federal Rural do Rio de Janeiro (UFRRJ) e atleta
+                  amador — que sempre teve o desejo de criar uma escolinha de
+                  vôlei para os jovens e adolescentes de sua comunidade.
                 </p>
                 <p>
-                  De uma ideia reunida em torno de algumas quadras, o circuito
-                  se prepara para se tornar a maior competição de vôlei amador
-                  do Estado do Rio de Janeiro — um calendário que vai
-                  atravessar a capital, a Região Serrana, os Lagos, o Norte e o
-                  Centro-Sul.
+                  Para tirar essa ideia do papel, Marlon procurou João Ribeiro,
+                  cientista de dados formado pela UNINABUCO, presidente
+                  executivo da G.R.E.S. União de Sepetiba e diretor executivo
+                  do Instituto Ubuntu. Desse encontro nasceu a Quinto Set
+                  Escolinha de Vôlei, projeto de formação que João passou a
+                  presidir.
                 </p>
                 <p>
-                  A partir da primeira etapa, cada rodada será uma celebração
-                  do esporte: arbitragem oficial, estrutura completa, torcida
-                  presente e o mesmo respeito que se vê nas grandes ligas
-                  profissionais.
+                  Foi a partir da experiência e da construção conjunta em torno
+                  da escolinha que surgiu uma nova ambição: criar uma
+                  competição capaz de reunir equipes e atletas do vôlei amador
+                  de diferentes regiões do Estado do Rio de Janeiro. É desse
+                  movimento que nasce o CVAERJ.
+                </p>
+                <p>
+                  O circuito está começando agora. A primeira edição será
+                  disputada no Cesarão, no Rio de Janeiro — não como uma
+                  limitação, mas como o ponto de partida desta história. Nos
+                  próximos anos, a meta é percorrer o estado, aproximar as
+                  regiões e construir uma das grandes referências do vôlei
+                  amador brasileiro.
+                </p>
+                <p className="border-l-2 border-gold-500 pl-4 font-display text-lg font-bold text-navy-900">
+                  Começamos em um lugar, mas pensamos no Estado inteiro.
                 </p>
               </div>
             </Reveal>
@@ -185,17 +224,17 @@ export default function SobrePage() {
               {timeline.map((item, index) => (
                 <Reveal key={item.year} delay={index * 60}>
                   <li
-                    className={`relative flex gap-6 pl-12 sm:w-1/2 sm:pl-0 ${
+                    className={`relative flex gap-6 pl-12 sm:w-1/2 ${
                       index % 2 === 0
-                        ? "sm:pr-12 sm:text-right"
+                        ? "sm:pl-0 sm:pr-12 sm:text-right"
                         : "sm:ml-auto sm:pl-12"
                     }`}
                   >
                     <span
                       aria-hidden
-                      className={`absolute left-2.5 top-1.5 h-3.5 w-3.5 rounded-full border-2 border-gold-500 bg-navy-900 sm:left-auto ${
+                      className={`absolute left-2.5 top-1.5 h-3.5 w-3.5 rounded-full border-2 border-gold-500 bg-navy-900 ${
                         index % 2 === 0
-                          ? "sm:-right-[7px]"
+                          ? "sm:left-auto sm:-right-[7px]"
                           : "sm:-left-[7px]"
                       }`}
                     />
@@ -215,6 +254,100 @@ export default function SobrePage() {
               ))}
             </ol>
           </div>
+        </Container>
+      </section>
+
+      <section className="relative overflow-hidden bg-navy-950 py-20 sm:py-24">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-20"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 15% 30%, #123b75 0, transparent 45%), radial-gradient(circle at 90% 80%, #f6be63 0, transparent 35%)",
+          }}
+        />
+        <Container className="relative">
+          <SectionHeading
+            eyebrow="Liderança"
+            title="Diretoria Executiva"
+            align="center"
+            dark
+            description="Duas pessoas, uma mesma visão: construir o vôlei amador do Estado do Rio de Janeiro."
+          />
+          <div className="mx-auto mt-16 grid max-w-4xl gap-14 sm:grid-cols-2 sm:gap-10 lg:gap-16">
+            {executiveBoard.map((member, index) => (
+              <Reveal key={member.name} delay={index * 120}>
+                <article
+                  className={`flex flex-col ${index % 2 === 1 ? "lg:mt-16" : ""}`}
+                >
+                  <DirectorPhoto
+                    src={member.photo}
+                    alt={`Foto de ${member.name}`}
+                    initials={member.initials}
+                    className={member.aspect}
+                  />
+                  <h3 className="mt-6 font-display text-2xl font-extrabold uppercase tracking-tight text-white">
+                    {member.name}
+                  </h3>
+                  <p className="mt-1 font-display text-sm font-bold uppercase tracking-widest text-gold-400">
+                    {member.role}
+                  </p>
+                  <p className="mt-4 text-sm leading-relaxed text-cream-100/70">
+                    {member.bio}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-cream-50 py-20 sm:py-24">
+        <Container>
+          <SectionHeading
+            eyebrow="Estrutura"
+            title="Diretores"
+            align="center"
+            description="A composição completa da diretoria será anunciada em breve."
+          />
+
+          {boardMembers.length > 0 ? (
+            <div className="mx-auto mt-14 grid max-w-5xl gap-10 sm:grid-cols-2 lg:grid-cols-4">
+              {boardMembers.map((member, index) => (
+                <Reveal key={member.name} delay={index * 80}>
+                  <figure className="text-center">
+                    <DirectorPhoto
+                      src={member.photo}
+                      alt={`Foto de ${member.name}`}
+                      initials={member.initials}
+                      className="aspect-square"
+                    />
+                    <figcaption className="mt-4">
+                      <p className="font-display text-base font-bold uppercase tracking-wide text-navy-900">
+                        {member.name}
+                      </p>
+                      <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-gold-600">
+                        {member.role}
+                      </p>
+                    </figcaption>
+                  </figure>
+                </Reveal>
+              ))}
+            </div>
+          ) : (
+            <Reveal>
+              <div className="mx-auto mt-14 max-w-xl rounded-xl border border-gold-500/40 bg-gold-400/10 p-10 text-center">
+                <UserRound className="mx-auto h-10 w-10 text-gold-600" />
+                <h3 className="mt-5 font-display text-xl font-extrabold uppercase tracking-tight text-navy-900">
+                  Em breve
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-navy-900/65">
+                  Os demais diretores do CVAERJ serão apresentados aqui, com
+                  foto, nome e cargo de cada integrante da diretoria.
+                </p>
+              </div>
+            </Reveal>
+          )}
         </Container>
       </section>
     </>
